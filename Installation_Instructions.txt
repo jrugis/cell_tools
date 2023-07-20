@@ -9,10 +9,6 @@ Your computer will need to be setup with a number of prerequisite software tools
 - Python3 - with packages:
     numpy, scipy, matplotlib, scikit-image, scikit-learn,
     jupyterlab, ipywidgets, ipyfilechooser, ipympl, opencv-python
-- JupyterLab extensions:
-    @jupyter-widgets/jupyterlab-manager
-    jupyter-matplotlib
-- JupyterLab widgetsnbextension enabled
 
 
 Examples of ways to install the prerequisites and run the notebooks follow.
@@ -41,37 +37,25 @@ Install Anaconda
 Go to https://www.anaconda.com/products/distribution and grab the Mac installer package.
 Then run the installer.
 
-When you first run Anaconda Navigator you might need to update it. Then relaunch.
-
-********************************************************
-
-Set Anaconda environments
--------------------------
-
-Anaconda Navigator | Environments | Not installed
-  install: ffmpeg, ipympl, nodejs
-  (This gives you an older version of nodejs which will have to be changed later.)
-
 ********************************************************
 
 Install python packages
 -----------------------
 
 Open up Terminal and type commands:
-conda install ipywidgets
-conda install -c conda-forge ipyfilechooser
-conda install -c conda-forge opencv
-conda install nodejs -c conda-forge --repodata-fn=repodata.json
-
-********************************************************
-
-Install JupyterLab extension
-----------------------------
-
-Terminal commands:
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install jupyter-matplotlib
-jupyter nbextension enable --py widgetsnbextension
+conda create -n ipyV8 python=3.9
+conda activate ipyV8
+conda install conda-forge::ipywidgets=8
+conda install conda-forge::ipyfilechooser
+conda install conda-forge::ipympl
+conda install conda-forge::matplotlib
+conda install conda-forge::scipy
+conda install conda-forge::scikit-image
+conda install conda-forge::scikit-learn
+conda install conda-forge::pandas
+conda install conda-forge::opencv
+conda deactivate
+conda install nb_conda_kernels
 
 ********************************************************
 
@@ -87,8 +71,10 @@ Terminal commands:
 Launch Notebook
 ---------------
  
-Launch JupyterLab from Anaconda Navigator.
-Navigate to and launch the desired notebook.
+Anaconda Navigator | Home
+  select "All applications" on "ipyV8"
+  Jupyter-Lab | Install, then Launch
+    Navigate to and launch the desired notebook.
 
 ********************************************************
 

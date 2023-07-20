@@ -1,0 +1,52 @@
+Experiment Instructions - Trypsin Dataset
+=========================================
+
+Download Trypsin data folders from the following links.
+NOTE: The link names are quite long, each beginning with "https". 
+
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EoccHIIZtqROk2NdJidCGsYB2LsqzY-M4FvgffMOy87d2g
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EnA_XD45TJVAkywfXeip4gYBsTObRDjJA96WIbg_MbUw_A
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EsyTdsPF6_ZMm0Jr2M9m2Q4B5D_V0Ixyx0sezLnAIMzPzA
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EvJbpMSn7bxAhs5SibiGngMBcLLrSjtvLsi50kRIuyFGgA
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EgTG5EcfjYJJs0IUGZgAATwBEK8Xj-WmuA8N5FemIuZ1ng
+
+Complete both of the following steps.
+
+Step 1 - ROI Identification
+--------------------------------------------------
+1. Open JupyterLab, clear the image stacks directory and copy the Trypsin Experiment folders into image_stacks.
+2. Open Ratiometric_ROI_Detection in JupyterLab.
+3. Run the "Package Import" code block using the play button next to the clipboard icon.
+4. Run the "File Import" code block.
+5. Run the "Create Results Folder(s)" code block, wait until "Done." appears.
+6. Run the "Threshold Sizing Baseline Image(s)" code block, wait until image(s) appear.
+7. Run the "Initial Mask Creation" code block, wait until image(s) and widgets appear.
+8. Run the "Segmentation" code block, wait until image(s) appear.
+9. Run the "Create Removal Mask(s)" code block, wait until "Done." appears.
+10. Run the "Display Removal Mask(s)" code block, wait until image(s) and widgets appear.
+11. Run the "Submit Removal Selection(s)" code block, wait until "Done." appears.
+12. Run the "Finalize Mask(s)" code block, wait until "Done." appears.
+13. Run the "Plotting and Data Collection" code block, wait until "Done." appears
+14. If desired (optional), run the "Optional plotting of individual pixel intensities of each ROI and average" code block, wait until "Done." appears.
+
+Step 2 - CSV Peaks Analysis
+--------------------------------------------------
+1. Open CSV_Peak_Detection in JupyterLab.
+2. Run the "Package Import" code block.
+3. Run the "Select data files for analysis" code block, wait until "Data Files" widget appears.
+   Select the Trypsin Experiment result folders from Data Files widget.
+4. Run the "Create a new analysis results directory" code block, wait until "Done." appears.
+5. Run the "Choose which region columns to analyse" code block, wait until "Region cols" widget(s) appear.
+6. Run the "Initial Data Plotting" code block, wait until plot(s) appear.
+7. Skip over the three "Anomaly/Artifact Removal" code blocks.
+8. Run the "Set stimulation time zone ranges" code block, wait until plot(s) appear.
+   Select stimulation zone range using "Stimulation zone" sliding range widget.
+   Set the zone range to 80-249.
+9. Run the "Plot data and stimulation time zones" code block, wait until plot(s) appear.
+   Check the "Check this box to have automatic baselines for all" widget.
+   Check the "Check this box to have starting baseline for all" widget.
+10. Run the "Peak counting and latency calculation settings" code block, wait until plot(s) and widgets appear.
+    Set the "Peak counting sensitivity" to "high medium".
+    Set the "Slope calculation method" to "gaussian fit".
+11. Run "Plot peaks and calculate latencies by region" code block, wait until plots stop being output and it says "Idle" at bottom of window.
+12. View results in the results folder.

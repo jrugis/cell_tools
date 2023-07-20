@@ -1,0 +1,196 @@
+###################################################################################################
+###################################################################################################
+
+Your computer will need to be setup with a number of prerequisite software tools, namely:
+
+- Git
+- NodeJS
+- ffmpeg
+- Python3 - with packages:
+    numpy, scipy, matplotlib, scikit-image, scikit-learn,
+    jupyterlab, ipywidgets, ipyfilechooser, ipympl, opencv-python
+- JupyterLab extensions:
+    @jupyter-widgets/jupyterlab-manager
+    jupyter-matplotlib
+- JupyterLab widgetsnbextension enabled
+
+
+Examples of ways to install the prerequisites and run the notebooks follow.
+
+
+
+
+################################################################################
+################################################################################
+                 This section is for Mac.
+################################################################################
+################################################################################
+
+NOTE: If using a newer MAC running macOS Catalina operating system additional installation steps are required.
+
+Additional macOS Catalina instructions
+--------------------------------------
+  Navigate to System Preferences > Security and Privacy > Privacy
+  Then add Terminal to list of apps with full disk access
+
+********************************************************
+
+Install Anaconda
+----------------
+
+Go to https://www.anaconda.com/products/distribution and grab the Mac installer package.
+Then run the installer.
+
+When you first run Anaconda Navigator you might need to update it. Then relaunch.
+
+********************************************************
+
+Set Anaconda environments
+-------------------------
+
+Anaconda Navigator | Environments | Not installed
+  install: ffmpeg, ipympl, nodejs
+  (This gives you an older version of nodejs which will have to be changed later.)
+
+********************************************************
+
+Install python packages
+-----------------------
+
+Open up Terminal and type commands:
+conda install ipywidgets
+conda install -c conda-forge ipyfilechooser
+conda install -c conda-forge opencv
+conda install nodejs -c conda-forge --repodata-fn=repodata.json
+
+********************************************************
+
+Install JupyterLab extension
+----------------------------
+
+Terminal commands:
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install jupyter-matplotlib
+jupyter nbextension enable --py widgetsnbextension
+
+********************************************************
+
+Download the cell_tools project from github
+-------------------------------------------
+
+Terminal commands:
+  Navigate to where you want the project to go, then...
+  git clone https://github.com/jrugis/cell_tools.git
+
+********************************************************
+
+Launch Notebook
+---------------
+ 
+Launch JupyterLab from Anaconda Navigator.
+Navigate to and launch the desired notebook.
+
+********************************************************
+
+To update notebooks to a subsequent newer version
+-------------------------------------------------
+
+Open up Terminal.
+Navigate into your cell_tools folder, then...
+  git fetch origin
+  git reset --hard origin/master
+  
+NOTE: This operation will leave your results folder intact, but
+      will overwrite any changes that you made in your copy of 
+      the notebooks !!!!!! 
+
+
+
+
+
+################################################################################
+################################################################################
+                 This section is for PC.
+################################################################################
+################################################################################
+
+Install git
+-----------
+
+Download and execute installer: https://git-scm.com/download/win
+  default editor: Nano
+  credential helper: none
+  
+********************************************************
+
+Install Anaconda
+----------------
+
+Download and install: https://www.anaconda.com/products/individual
+      
+********************************************************
+
+Set Anaconda environments
+-------------------------
+
+Anaconda Navigator | Environments | Not installed
+  install: ffmpeg, ipympl, nodejs 
+
+********************************************************
+
+Install python packages
+-----------------------
+
+Anaconda Navigator | Home | CMD.exe Prompt
+  pip install ipywidgets
+  pip install ipyfilechooser
+  pip install opencv-python
+
+********************************************************
+
+Install JupyterLab extension
+----------------------------
+
+Anaconda Navigator | Home | CMD.exe Prompt
+  jupyter lab build
+  jupyter labextension install @jupyter-widgets/jupyterlab-manager
+  jupyter labextension install jupyter-matplotlib
+  jupyter nbextension enable --py widgetsnbextension 
+
+Check:
+  jupyter labextension list
+	
+********************************************************
+
+Download the cell_tools project from github
+-------------------------------------------
+
+Anaconda Navigator | Home | CMD.exe Prompt
+  Navigate to where you want the project to go, then...
+  git clone https://github.com/jrugis/cell_tools.git
+
+********************************************************
+
+Launch Notebook
+---------------
+ 
+Anaconda Navigator | Home | CMD.exe Prompt
+  jupyter-lab
+    Navigate to and launch the desired notebook.
+
+********************************************************
+
+To update notebooks to a subsequent newer version
+-------------------------------------------------
+
+Anaconda Navigator | Home | CMD.exe Prompt
+  Navigate into your cell_tools folder, then...
+    git fetch origin
+    git reset --hard origin/master
+  
+NOTE: This operation will leave your results folder intact, but
+      will overwrite any changes that you made in your copy of 
+      the notebooks !!!!!! 
+
+********************************************************
+********************************************************

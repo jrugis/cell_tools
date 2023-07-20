@@ -1,0 +1,52 @@
+Experiment Instructions - GSK Dataset
+=====================================
+
+Download GSK data folders from the following links.
+NOTE: The link names are quite long, each beginning with "https". 
+
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EoKst1yLpwJJgM5Yt-7SDw4BEsw7DubcefXas1t64QGjVw
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EuyKiMhGGqxIleHCvwtMpUAB3nYmhr2LOSAN99EeXr0H3A
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/Em2IdiQNzflBvi3Td7xJVLIBdVoLHjKVS2FMaLzEve6hkQ
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/Eo0RcXw67TdNtQwhw_d1Ao8BvAGfO7lF6CfKFboSHUCtnw
+
+Complete both of the following steps.
+
+Step 1 - ROI Identification
+--------------------------------------------------
+1. Open JupyterLab, clear the image stacks directory and copy the GSK Experiment folders into image_stacks.
+2. Open Ratiometric_ROI_Detection in JupyterLab.
+3. Run the "Package Import" code block using the play button next to the clipboard icon.
+4. Run the "File Import" code block.
+5. Run the "Create Results Folder(s)" code block, wait until "Done." appears.
+6. Run the "Threshold Sizing Baseline Image(s)" code block, wait until image(s) appear.
+7. Run the "Initial Mask Creation" code block, wait until image(s) and widgets appear.
+8. Run the "Segmentation" code block, wait until image(s) appear.
+9. Run the "Create Removal Mask(s)" code block, wait until "Done." appears.
+10. Run the "Display Removal Mask(s)" code block, wait until image(s) and widgets appear.
+11. Run the "Submit Removal Selection(s)" code block, wait until "Done." appears.
+12. Run the "Finalize Mask(s)" code block, wait until "Done." appears.
+13. Run the "Plotting and Data Collection" code block, wait until "Done." appears.
+14. If desired (optional), run the "Optional plotting of individual pixel intensities of each ROI and average" code block, wait until "Done." appears.
+
+Step 2 - GSK CSV Analysis
+--------------------------------------------------
+1. Open CSV_Peak_Detection_GSK in JupyterLab.
+2. Run the "Package Import" code block.
+3. Run the "Select data files for analysis" code block, wait until "Data Files" widget appears.
+   Select the GSK Experiment result folders from Data Files widget.
+4. Run the "Create a new analysis results directory" code block, wait until "Done." appears.
+5. Run the "Choose which region columns to analyze" code block, wait until "Region cols" widget(s) appear.
+   Check the "Check this box to make stimulation zones the same for all files" widget.
+   Check the "Check this box to automatically remove bad traces" widget.
+6. Run the "Initial Data Plotting" code block, wait until plot(s) appear.
+7. Skip over the three "Anomaly/Artifact Removal" code blocks.
+8. Run the "Set stimulation time zone ranges" code block, wait until plot(s) appear.
+   Select range of stimulation zones using "Stimulation zone" sliding range widget.
+   Set the zone range to 50-200.
+9. Run the "Plot data and stimulation time zones" code block, wait until plot(s) appear.
+   Check the "Check this box to have automatic baselines for all" widget.
+   Check the "Check this box to have starting baseline for all" widget.
+10. Run the "Calculation settings" code block, wait until plot(s) and widgets appear.
+    Set the "Slope calculation method" to "polynomial fit".
+11. Run "Plot analysis by region" code block, wait until plots stop being output and it says "Idle" at bottom of window.
+12. View results in the results folder.

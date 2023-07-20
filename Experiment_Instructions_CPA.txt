@@ -1,0 +1,53 @@
+Experiment Instructions - CPA Dataset
+=====================================
+
+Download CPA data folders from the following links.
+NOTE: The link names are quite long, each beginning with "https". 
+
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EpFM14AvbIlBpaouEpMoUBgB4mQs-WTbFgy7hF8m4CGteQ
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/Em9tHZm8EMhBh8tBoboEgREBfNzx74iI3cn_hliO4sYq-w
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EhKigESg6zFNiyZ4AuFdYYMBJ1Vw_2K3Qd79bWHvaj4JQg
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EskTR7eAptFLs2GXgOFhV0oB-FJYMzK6JJCVbj6veWlaeg
+https://uoa-my.sharepoint.com/:f:/g/personal/jrug001_uoa_auckland_ac_nz/EvmsP4y74T9Hr4_FmkhVmPoB6r2PmBEabWOLaewkcYyoMA
+
+Complete both of the following steps.
+
+Step 1 - ROI Identification
+--------------------------------------------------
+1. Open JupyterLab, clear the image stacks directory and copy the CPA Experiment folders into image_stacks.
+2. Open Ratiometric_ROI_Detection in JupyterLab.
+3. Run the "Package Import" code block using the play button next to the clipboard icon.
+4. Run the "File Import" code block.
+5. Run the "Create Results Folder(s)" code block, wait until "Done." appears.
+6. Run the "Threshold Sizing Baseline Image(s)" code block, wait until image(s) appear.
+7. Run the "Initial Mask Creation" code block, wait until image(s) and widgets appear.
+8. Run the "Segmentation" code block, wait until image(s) appear.
+9. Run the "Create Removal Mask(s)" code block, wait until "Done." appears.
+10. Run the "Display Removal Mask(s)" code block, wait until image(s) and widgets appear.
+11. Run the "Submit Removal Selection(s)" code block, wait until "Done." appears.
+12. Run the "Finalize Mask(s)" code block, wait until "Done." appears.
+13. Run the "Plotting and Data Collection" code block, wait until "Done." appears.
+14. If desired (optional), run the "Optional plotting of individual pixel intensities of each ROI and average" code block, wait until "Done." appears.
+
+Step 2 - CPA CSV Analysis
+--------------------------------------------------
+1. Open CSV_Peak_Detection_CPA in JupyterLab.
+2. Run the "Package Import" code block.
+3. Run the "Select data files for analysis" code block, wait until "Data Files" widget appears.
+   Select the CPA Experiment result folders from Data Files widget.
+4. Run the "Create a new analysis results directory" code block, wait until "Done." appears.
+5. Run the "Choose which region columns to analyze" code block, wait until "Region cols" widget(s) appear.
+   Check the "Check this box to make stimulation zones are same for all files" box.
+6. Run the "Initial Data Plotting" code block, wait until plot(s) appear.
+   Set "Number of stimulation time zones for all plots:" to 2.
+7. Skip over the three "Anomaly/Artifact Removal" code blocks.
+8. Run the "Set stimulation time zone ranges" code block, wait until plot(s) appear.
+   Select range of stimulation zones using "Stimulation zone" sliding range widget.
+   Set the zone ranges to 200-800, and 900-1074.
+9. Run the "Plot data and stimulation time zones" code block, wait until plot(s) appear.
+   Check the "Check this box to have automatic baselines for all" widget.
+   Check the "Check this box to have starting baseline for all" widget.
+10. Run the "Calculation settings" code block, wait until plot(s) and widgets appear.
+    Set the "Slope calculation method" to "polynomial fit".
+11. Run "Plot analysis by region" code block, wait until plots stop being output and it says "Idle" at bottom of window.
+12. View results in the results folder.

@@ -1,0 +1,82 @@
+Experiment Instructions - GCAMP Dataset
+=======================================
+
+Download GCAMP data files from the following links.
+NOTE: The link names are quite long, each beginning with "https". 
+
+https://uoa-my.sharepoint.com/:i:/g/personal/jrug001_uoa_auckland_ac_nz/EUcWoV-U47xGjevsb7GHsecB0CzShI0q5t7XDmomaUg6sA
+https://uoa-my.sharepoint.com/:i:/g/personal/jrug001_uoa_auckland_ac_nz/EQoAvttjkiJMgtqSRq8UufMBWoEQC1qoBqbn8pQdehyLbg
+https://uoa-my.sharepoint.com/:i:/g/personal/jrug001_uoa_auckland_ac_nz/EY4tZbJAxLpOmVChz_DHUOEBJLxMU1_AMz6Hzw1LWNcuRg
+https://uoa-my.sharepoint.com/:i:/g/personal/jrug001_uoa_auckland_ac_nz/EYt6QyNo4mZHgVC8w3TsjGwBw9nn5cwBq1S3dJt1tAztmA
+
+Complete steps 1 and 2, then optionally steps 3 and 4.
+
+Step 1 - ROI Identification
+------------------------------------------------
+1. Open JupyterLab, clear the image stacks directory and copy the GCAMP data files into cell_tools/IMAGING/image_stacks.
+2. Open the ROI_Detection notebook in JupyterLab
+3. Run the "Initialize" code block.
+4. Run the "Select image stack file(s)" code block.
+   Select all four of the "Mistgcamp-3" files.
+5. Run the "Enter short descriptive image stack labels" code block.
+   Type in the four labels "1Hz", "2Hz", "5Hz", "10Hz".
+6. Run the "Set display and calculation parameters" code block.
+   Set the "Image stack for ROI creation" to "5Hz".
+   Set the "Calculation method" to "std".
+7. Run the "Create a new time-stamped results directory" code block.
+8. Run the "Get the image stack for ROI creation" code block.
+9. Run the "Unstimulated average (or standard deviation) over time" code block.
+   Plots will appear.
+10. Run the "Stimulated average (or standard deviation) over time" code block.
+   Plots will appear.
+11. Run the "Stimulated minus unstimulated average (or standard deviation) over time" code block.
+    Plots will appear.
+12. Run the "Create region-of-interest mask" code block.
+    Plots will appear.
+13. Optionally run the "FOR REFERENCE: Annotate the ROI mask regions by number" code block.
+    A plot will appear.
+14. Optionally run the "DIAGNOSTIC: Plot ROI responses for the same stimulation frequency used to generate the mask" code block.
+    A number of plots will appear.
+15. Run the "RESULTS: Plot responses for all stimulation frequencies and regions using the mask from above" code block.
+    After a few seconds, a number of plots will appear.
+
+Step 2 - Post-Processing: Peak Detection
+------------------------------------------------
+1. Open the Peak_Detection notebook in JupyterLab
+2. Run the "Initialize" code block.
+3. Run the "Select a results directory and peak counting options" code block.
+   Select the most current GCAMP results directory.
+4. Run the "Peak counting over all regions" code block.
+   Plots will appear.
+
+Step 3 - Post-Processing: Frequency Analysis
+------------------------------------------------
+1. Open the Frequency_Analysis notebook in JupyterLab
+2. Run the "Initialize" code block.
+3. Run the "Select a results directory and set analysis frame range" code block.
+   Select the most current GCAMP results directory.
+4. Run the "Frequency analysis of results over all regions" code block.
+   A number of plots will appear.
+5. Re-run the "Select a results directory and set analysis frame range" code block.
+   Select the most current GCAMP results directory.
+   Set the "Calculation method" to "FFT".
+6. Re-run the "Frequency analysis of results over all regions" code block.
+   A number of plots will appear.
+
+Step 4 - Post-Processing: Movie Making
+------------------------------------------------
+1. Open the Movie_Making notebook in JupyterLab
+2. Run the "Initialize" code block.
+3. Run the "Select an image stack, a results directory and one or more regions" code block.
+   Select the image stack "Mistgcamp-3_0002.tif".
+   Select the most current GCAMP results directory.
+   Select regions "region_01-mask5Hz-stimALL", "region_02-mask5Hz-stimALL", 
+                  "region_03-mask5Hz-stimALL", "region_04-mask5Hz-stimALL",
+                  "region_05-mask5Hz-stimALL", "region_06-mask5Hz-stimALL",
+                  "region_07-mask5Hz-stimALL", "region_08-mask5Hz-stimALL",
+                  "region_09-mask5Hz-stimALL", "region_10-mask5Hz-stimALL"
+4. Run the "Select movie options" code block.
+5. Run the "Generate the movie file" code block.
+   Wait until the "Processing frame" count says "Done."
+   The movie file "apical.mp4" can be found in the time-stamped results directory.
+

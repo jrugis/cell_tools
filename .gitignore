@@ -1,0 +1,14 @@
+.DS_Store
+
+__pycache__/
+*checkpoints
+
+_*
+results/
+*.oir
+*.tif
+*.png
+*.csv
+*.xlsx
+*.pvsm
+*.mp4

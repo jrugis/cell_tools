@@ -1,0 +1,207 @@
+Pre-Processing: Image Stabilization
+------------------------------------------------
+1. Open the post_processing_stabilization notebook in JupyterLab
+2. Run the "Initialize" code block.
+3. Run the "Select an image stack and set file options" code block.
+   Select the image stack "Mistgcamp-2_4x(20hz)_0003.tif".
+4. Run the "Get an image stack" code block.
+5. Run the "OPTIONAL: Use this code block to interactively explore landmark nuclei detection parameters" code block.
+   A plot will appear.
+6. Run the "Find all landmark nuclei in the image stack" code block.  
+   Wait until the "Processing frame" count says "Done."
+7. Run the "Identify and plot landmark 'threads' to use for image stabilization" code block.
+   A plot will appear.
+8. Run the "Stabilize the image stack using piece-wise affine transformation warping" code block.
+   Wait until the "Warping frame" count says "Done."
+   A stabilized image stack tiff file will appear in the "images_stacks" folder. 
+9. Run the "OPTIONAL: Saved a cropped copy of the original image stack" code block.
+   A matching cropped version of ther original image stack tiff file will appear in the "images_stacks" folder. 
+
+For comparison, the image stabilization notebook can be reused to visualize the new tiff images.
+
+3. Run the "Select an image stack and set file options" code block.
+   Select the image stack "Mistgcamp-2_4x(20hz)_0003_orig.tif".
+4. Run the "Get an image stack" code block.
+5. Run the "OPTIONAL: Use this code block to interactively explore landmark nuclei detection parameters" code block.
+   Set the "stack range" to 0 - 450
+   A flattened version of the original stack will appear.
+   
+3. Run the "Select an image stack and set file options" code block.
+   Select the image stack "Mistgcamp-2_4x(20hz)_0003_stab.tif".
+4. Run the "Get an image stack" code block.
+5. Run the "OPTIONAL: Use this code block to interactively explore landmark nuclei detection parameters" code block.
+   Set the "stack range" to 0 - 450
+   A flattened version of the stabilzed stack will appear.
+   
+The benefit of stabilization preproccessing can be explored by reusing the roi_identification notebook.
+
+1. Open the roi_identification notebook in JupyterLab
+3. Run the "Select image stack file(s)" code block.
+   Select the files "Mistgcamp-2_4x(20hz)_0003_orig.tif" and "Mistgcamp-2_4x(20hz)_0003_stab.tif".
+4. Run the "Enter short descriptive image stack labels" code block.
+   Type in the four labels "ORIG", "STAB".
+5. Run the "Set display and calculation parameters" code block.
+   Set the "Image stack for ROI creation" to "STAB".
+   Set the "Stimulation start frame" to 150.
+   Set the "Stimulation done frame" to 375.
+   Set the "Image stack frames per second" to 20.
+   Set the "Calculation method" to "std".
+6. Run the "Get the image stack for ROI creation" code block.
+7. Run the "Unstimulated average (or standard deviation) over time" code block.
+   Plots will appear.
+8. Run the "Stimulated average (or standard deviation) over time" code block.
+   Plots will appear.
+9. Run the "Stimulated minus unstimulated average (or standard deviation) over time" code block.
+   Plots will appear.
+10. Run the "Create region-of-interest mask" code block.
+    Plots will appear.
+13. Optionally run the "DIAGNOSTIC: Plot ROI responses for the same stimulation frequency used to generate the mask" code block.
+    A number of plots will appear.
+14. Run the "RESULTS: Plot responses for all stimulation frequencies and regions using the mask from above" code block.
+    After a few seconds, a number of plots will appear.
+
+   
+   
+
+********************************************************
+
+Install Fiji ImageJ
+-------------------
+
+  Download and install: https://imagej.net/Fiji/Downloads
+  
+Check:
+  launch the Fiji application 
+
+********************************************************
+
+Use Fiji to convert oir files to tif's
+--------------------------------------
+
+Copy oir files to folder: cell_tools/IMAGING/image_stacks/ 
+
+  Within Fiji, run macro: cell_tools/IMAGING/image_stacks/oir2tif.ijm
+
+********************************************************
+
+
+##################################################################
+##################################################################
+Alternative installation for MAC (using Terminal commands).
+##################################################################
+##################################################################
+
+NOTE: If using a newer MAC running macOS Catalina operating system additional installation steps are required.
+
+Additional macOS Catalina instructions
+--------------------------------------
+  Navigate to System Preferences > Security and Privacy > Privacy
+  Then add Terminal to list of apps with full disk access
+
+********************************************************
+
+Install Xcode
+-------------
+
+  xcode-select --install
+
+Check:
+  xcode-select --version
+  git --version
+
+********************************************************
+
+Install HomeBrew
+----------------
+
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+Check:
+  brew --version
+
+********************************************************
+
+Install NodeJS
+--------------
+
+  brew install node
+  
+Check:
+  node -v
+  npm -v  
+
+********************************************************
+
+Install ffmpeg
+--------------
+
+  brew install ffmpeg
+  
+Check:
+  ffmpeg 
+
+********************************************************
+
+Install Python3
+---------------
+
+ brew install python3
+
+Check:
+  python3 --version
+  pip3 --version
+
+********************************************************
+
+Install python packages
+-----------------------
+
+  pip3 install numpy scipy matplotlib
+  pip3 install scikit-image scikit-learn
+  pip3 install jupyterlab ipywidgets ipyfilechooser ipympl
+  Pip3 install opencv-python
+
+********************************************************
+
+Install JupyterLab extension
+----------------------------
+
+  jupyter labextension install @jupyter-widgets/jupyterlab-manager
+  jupyter labextension install jupyter-matplotlib
+  jupyter nbextension enable --py widgetsnbextension 
+
+Check:
+  jupyter labextension list
+
+
+********************************************************
+
+Download the cell_tools project from GitHub
+-------------------------------------------
+
+Navigate to where you want the project to go, then...
+  git clone https://github.com/jrugis/cell_tools.git
+
+********************************************************
+
+Launch Notebook
+---------------
+ 
+  jupyter-lab
+    Navigate to and launch a notebook.
+
+********************************************************
+
+To update notebooks to a subsequent newer version
+-------------------------------------------------
+
+Navigate into your cell_tools folder, then...
+  git fetch origin
+  git reset --hard origin/master
+  
+NOTE: This operation will leave your results folder intact, but
+      will overwrite any changes that you made in your copy of 
+      the notebook !!!!!! 
+
+
+
